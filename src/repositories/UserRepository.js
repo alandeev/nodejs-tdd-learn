@@ -12,14 +12,6 @@ class UserRepository {
     return this._instance;
   }
 
-  find(condition) {
-    return User.find(condition)
-  }
-
-  findById(userId, condition) {
-    return User.findById(userId, condition);
-  }
-
   findByEmail(email) {
     return User.findOne({ 
       where: { email }

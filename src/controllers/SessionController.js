@@ -19,9 +19,7 @@ class SessionController {
       return res.status(401).json({ error: "password is invalid" });
     }
 
-    const token = jwt.sign({}, process.env.SECRET_JWT, {
-      expiresIn: '1d'
-    })
+    const token = user.generateToken();
 
     res.status(200).json({ token });
   }
